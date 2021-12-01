@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="belerweb.pinyin4j" type="repository">
+    <properties maven-id="com.belerweb:pinyin4j:2.5.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/belerweb/pinyin4j/2.5.0/pinyin4j-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
