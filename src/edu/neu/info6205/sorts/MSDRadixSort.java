@@ -1,13 +1,13 @@
 package edu.neu.info6205.sorts;
 
-import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+
 
 public class MSDRadixSort {
     private static String[] aux;
     private static String[] aux1;
     private static int R = 65536;
 
-    public static void sort(String[] a, String[] chinese) throws BadHanyuPinyinOutputFormatCombination {
+    public static void sort(String[] a, String[] chinese)  {
         aux = new String[a.length];
         aux1 = new String[a.length];
         sort(a, chinese, aux, aux1, 0, a.length-1, 0);
@@ -22,7 +22,7 @@ public class MSDRadixSort {
     }
 
 
-    private static void sort(String[] a, String[] chinese, String[] aux, String[] aux1, int lo, int hi, int d) throws BadHanyuPinyinOutputFormatCombination {
+    private static void sort(String[] a, String[] chinese, String[] aux, String[] aux1, int lo, int hi, int d) {
         if(hi<=lo) return;
         int[] count = new int[R+2];
         for(int i = lo; i <= hi; i++){
