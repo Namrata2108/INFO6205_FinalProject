@@ -2,10 +2,6 @@ package edu.neu.info6205.sorts;
 
 import edu.neu.info6205.utils.SortUtils;
 
-import java.text.CollationKey;
-import java.text.Collator;
-import java.util.Locale;
-
 public class DualPivotQuickSort {
 
 
@@ -19,6 +15,10 @@ public class DualPivotQuickSort {
             sort(arr, pivot[1]+1, high);
 
         }
+    }
+
+    public static void doSort(String[] arr){
+        sort(arr, 0, arr.length-1);
     }
 
     private static int[] partition(String[] arr, int low, int high){
@@ -47,6 +47,7 @@ public class DualPivotQuickSort {
                 g--;
                 if(SortUtils.lessThan(arr[k], p)){
                     SortUtils.swap(arr, k, j);
+                    j++;
                 }
             }
             k++;
