@@ -30,7 +30,7 @@ public class Benchmark_Timer<T> implements Benchmark<T> {
      * @param m the number of runs.
      * @return at least 2 and at most m/10.
      */
-    static int getWarmupRuns(int m) {
+    public static int getWarmupRuns(int m) {
         return Integer.max(1, Integer.min(10, m / 10));
     }
 

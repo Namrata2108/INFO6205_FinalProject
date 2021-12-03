@@ -164,17 +164,17 @@ public class Timer {
     private boolean running = false;
 
     // NOTE: Used by unit tests
-    private long getTicks() {
+    public long getTicks() {
         return ticks;
     }
 
     // NOTE: Used by unit tests
-    private int getLaps() {
+    public int getLaps() {
         return laps;
     }
 
     // NOTE: Used by unit tests
-    private boolean isRunning() {
+    public boolean isRunning() {
         return running;
     }
 
@@ -186,7 +186,7 @@ public class Timer {
      *
      * @return the number of ticks for the system clock. Currently defined as nano time.
      */
-    private static long getClock() {
+    public static long getClock() {
         return System.nanoTime();
     }
 
@@ -197,7 +197,7 @@ public class Timer {
      * @param ticks the number of clock ticks -- currently in nanoseconds.
      * @return the corresponding number of milliseconds.
      */
-    private static double toMillisecs(long ticks) {
+    public static double toMillisecs(long ticks) {
         return (ticks/1e6);
     }
 
