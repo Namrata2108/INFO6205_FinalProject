@@ -9,7 +9,6 @@ public class DualPivotQuickSort {
     public static void sort (String[] arr, int low, int high){
         if(low < high){
             int[] pivot = partition(arr, low, high);
-
             sort(arr, low, pivot[0] -1);
             sort(arr, pivot[0]+1, pivot[1]-1);
             sort(arr, pivot[1]+1, high);
@@ -21,7 +20,7 @@ public class DualPivotQuickSort {
         sort(arr, 0, arr.length-1);
     }
 
-    private static int[] partition(String[] arr, int low, int high){
+    public static int[] partition(String[] arr, int low, int high){
 
         if(SortUtils.greaterThan(arr[low], arr[high])){
             SortUtils.swap(arr, low, high);
@@ -58,7 +57,6 @@ public class DualPivotQuickSort {
 
         SortUtils.swap(arr, low, j);
         SortUtils.swap(arr, high, g);
-
         return new int[] {j,g};
     }
 

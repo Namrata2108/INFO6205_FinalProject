@@ -12,5 +12,6 @@
     <orderEntry type="library" exported="" name="belerweb.pinyin4j" level="project" />
     <orderEntry type="library" exported="" name="ini4j" level="project" />
     <orderEntry type="library" exported="" name="log4j" level="project" />
+    <orderEntry type="library" exported="" name="junit" level="project" />
   </component>
 </module>

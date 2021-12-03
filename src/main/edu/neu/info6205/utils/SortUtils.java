@@ -22,7 +22,7 @@ public class SortUtils {
     public static String[] convertToPinyin(String[] a) throws BadHanyuPinyinOutputFormatCombination {
         String[] temp = new String[a.length];
         HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();
-        format.setToneType(HanyuPinyinToneType.WITH_TONE_MARK);
+        format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
         format.setCaseType(HanyuPinyinCaseType.LOWERCASE);
         format.setVCharType(HanyuPinyinVCharType.WITH_U_UNICODE);
         long length = a.length;
@@ -139,7 +139,21 @@ public class SortUtils {
         }
        return null;
     }
+
+    public static String[] chineseExampleSorted = {
+            "阿",
+            "阿鼎",
+            "曹玉德",
+            "樊辉辉",
+            "高民政",
+            "洪文胜",
+            "刘持平",
+            "苏会敏",
+            "袁继鹏",
+    };
 }
+
+
 
 /**
  * Usage for benchmark

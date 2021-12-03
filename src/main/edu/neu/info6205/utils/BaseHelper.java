@@ -1,7 +1,5 @@
 package edu.neu.info6205.utils;
 
-import edu.neu.info6205.utils.SortUtils;
-
 import java.util.Random;
 import java.util.function.Function;
 

@@ -18,7 +18,6 @@ public class MSDRadixSort {
     public static void doSort(String[] chinese) {
         try {
             String[] chineseConv = SortUtils.convertToPinyin(chinese);
-            System.out.println("Done conv");
             sort(chineseConv, chinese);
         }
         catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
