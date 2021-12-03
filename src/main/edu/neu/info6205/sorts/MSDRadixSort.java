@@ -1,6 +1,8 @@
 package edu.neu.info6205.sorts;
 
 
+import edu.neu.info6205.utils.SortUtils;
+import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 public class MSDRadixSort {
     private static String[] aux;
@@ -12,6 +14,19 @@ public class MSDRadixSort {
         aux1 = new String[a.length];
         sort(a, chinese, aux, aux1, 0, a.length-1, 0);
     }
+
+    public static void doSort(String[] chinese) {
+        try {
+            String[] chineseConv = SortUtils.convertToPinyin(chinese);
+            System.out.println("Done conv");
+            sort(chineseConv, chinese);
+        }
+        catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
+            badHanyuPinyinOutputFormatCombination.printStackTrace();
+        }
+
+    }
+
 
     private static int charAt(String s, int d)  {
        if(d < s.length()) {
