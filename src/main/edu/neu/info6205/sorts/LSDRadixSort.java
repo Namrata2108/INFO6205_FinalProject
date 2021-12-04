@@ -52,7 +52,7 @@ public class LSDRadixSort {
             for (int d = w - 1; d >= 0; d--)
             {
                 int[] count = new int[R + 1];
-                for (int i = 0; i < n; ++i)
+                for (int i = 0; i < n+1; ++i)
                 {
                     int c = charFind(i, d, a);
                     count[c + 1]++;
@@ -61,22 +61,17 @@ public class LSDRadixSort {
                 {
                     count[r + 1] += count[r];
                 }
-                for (int i = 0; i < n; ++i)
+                for (int i = 0; i < n+1; ++i)
                 {
                     int c = charFind(i, d, a);
                     aux1[count[c]] = chinese[i];
                     aux[count[c]++] = a[i];
                 }
-                for (int i = 0; i < n; ++i)
+                for (int i = 0; i < n+1; ++i)
                 {
                     a[i] = aux[i];
                     chinese[i]=aux1[i];
                 }
-            }
-            for (int i = 0; i < n; i++)
-            {
-                System.out.println(chinese [i]);
-                //System.out.println(a [i]);
             }
         }
     }
