@@ -1,5 +1,8 @@
 package edu.neu.info6205.sorts;
 
+import edu.neu.info6205.utils.SortUtils;
+import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+
 public class LSDRadixSort {
         private static int R=256;
         private static String[] aux;
@@ -12,6 +15,16 @@ public class LSDRadixSort {
             int w = longestString(a);
             sort(a, chinese, aux, aux1, a.length-1, w);
         }
+    public static void doSort(String[] chinese) {
+        try {
+            String[] chineseConv = SortUtils.convertToPinyin(chinese);
+            sort(chineseConv, chinese);
+        }
+        catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
+            badHanyuPinyinOutputFormatCombination.printStackTrace();
+        }
+
+    }
 
         private static int charFind(int i, int d, String[] a)
         {
