@@ -39,15 +39,15 @@ public class SortUtils {
     }
 
     public static String[] chineseExample ={
-                "刘持平",
-                "洪文胜",
-                "樊辉辉",
-                "苏会敏",
-                "高民政",
-                "曹玉德",
-                "袁继鹏",
-                "阿鼎",
-                "阿"
+            "刘持平",
+            "洪文胜",
+            "樊辉辉",
+            "苏会敏",
+            "高民政",
+            "曹玉德",
+            "袁继鹏",
+            "阿鼎",
+            "阿"
     };
     public static void swap(String[] arr, int i, int j){
         String temp = arr[i];
@@ -137,7 +137,7 @@ public class SortUtils {
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }
-       return null;
+        return null;
     }
 
     public static String[] chineseExampleSorted = {
@@ -152,17 +152,3 @@ public class SortUtils {
             "袁继鹏",
     };
 }
-
-
-
-/**
- * Usage for benchmark
- *
- * String[] chinese =SortUtils.readFromFile("src/resources/shuffledChinese.txt");
- *         Supplier<String[]> supplier = () -> Arrays.copyOf(chinese, chinese.length);
- *
- *
- *         int n = chinese.length;
- *
- *         BenchmarkTarget.benchmarkTarget(supplier,MSDRadixSort::doSort,1, n, "Dual Pivot Quick Sort");
- */
