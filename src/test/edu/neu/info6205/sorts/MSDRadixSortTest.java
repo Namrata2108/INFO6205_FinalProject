@@ -6,7 +6,9 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
-
+/**
+ * Tests the basic sort functionality as well as the file reader and sort
+ */
 public class MSDRadixSortTest {
     @Test
     public void testSort() {

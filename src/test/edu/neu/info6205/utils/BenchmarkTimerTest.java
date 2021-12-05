@@ -4,6 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Credits: info6205 assignments repo
+ * https://github.com/rchillyard/INFO6205
+ */
 public class BenchmarkTimerTest {
 
     int pre = 0;

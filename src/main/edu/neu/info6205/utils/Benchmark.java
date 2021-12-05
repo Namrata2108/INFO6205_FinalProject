@@ -4,7 +4,7 @@ import java.util.function.Supplier;
 
 /**
  * Interface to define the behavior of a Benchmark.
- *
+ * Credits: info6205 assignments repo
  * @param <T> the underlying type which is passed into (or supplied) to the run/runFromSupplier methods.
  */
 public interface Benchmark<T> {

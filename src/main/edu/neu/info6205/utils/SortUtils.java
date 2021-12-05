@@ -15,10 +15,20 @@ import java.text.Collator;
 import java.util.*;
 import java.util.function.Function;
 
+/**
+ * Credits: pinyin4j
+ * http://pinyin4j.sourceforge.net/
+ */
 public class SortUtils {
 
     private static Collator coll = Collator.getInstance(Locale.CHINA);
 
+    /**
+     *
+     * @param a the original Chinese string array
+     * @return String array of pinyin conversion from the original chinese array
+     * @throws BadHanyuPinyinOutputFormatCombination if format mismatch is present
+     */
     public static String[] convertToPinyin(String[] a) throws BadHanyuPinyinOutputFormatCombination {
         String[] temp = new String[a.length];
         HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();
@@ -55,21 +65,23 @@ public class SortUtils {
         arr[j] = temp;
     }
 
+    /**
+     * Comparators
+     * @param s1 the first string in the comparison
+     * @param s2 the second string to compare with
+     * @return boolean of compare condition
+     */
     public static boolean lessThan(String s1, String s2){
-
-        return (coll.compare(s1,s2)<0);
+        return (s1.compareTo(s2)<0);
     }
     public static boolean greaterThan(String s1, String s2){
-
-        return (coll.compare(s1,s2)>0);
+        return (s1.compareTo(s2)>0);
     }
     public static boolean greaterThanOrEqualTo(String s1, String s2){
-
-        return (coll.compare(s1,s2)>=0);
+        return (s1.compareTo(s2)>=0);
     }
     public static boolean lessThanOrEqualTo(String s1, String s2){
-
-        return (coll.compare(s1,s2)<=0);
+        return (s2.compareTo(s2)<=0);
     }
 
     public static <T> T[] asArray(Collection<T> ts) {
@@ -79,6 +91,7 @@ public class SortUtils {
     }
 
     /**
+     * Credits: info6205 assignments repo
      * Create a string representing an double, with three decimal places.
      *
      * @param x the number to show.
@@ -90,6 +103,7 @@ public class SortUtils {
     }
 
     /**
+     * Credits: info6205 assignments repo
      * Create a string representing an integer, with commas to separate thousands.
      *
      * @param x the integer.
@@ -115,6 +129,7 @@ public class SortUtils {
     }
 
     /**
+     * Credits: info6205 assignments repo
      * Method to calculate log to tbe base 2 of n.
      *
      * @param n the number whose log we need.
@@ -150,5 +165,13 @@ public class SortUtils {
             "刘持平",
             "苏会敏",
             "袁继鹏",
+    };
+
+    public static String[] filesSourceArray = {
+            "src/resources/shuffledChinese_250k.txt",
+            "src/resources/shuffledChinese_500K.txt",
+            "src/resources/shuffledChinese.txt",
+            "src/resources/shuffledChinese_2M.txt",
+            "src/resources/shuffledChinese_4M.txt"
     };
 }

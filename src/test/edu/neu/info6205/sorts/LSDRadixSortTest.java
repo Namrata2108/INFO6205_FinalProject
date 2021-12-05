@@ -7,7 +7,9 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
-
+/**
+ * Tests the basic sort functionality as well as the file reader and sort
+ */
 public class LSDRadixSortTest {
     @Test
     public void testSort() {

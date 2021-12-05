@@ -4,6 +4,10 @@ package edu.neu.info6205.sorts;
 import edu.neu.info6205.utils.SortUtils;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
+/**
+ * CREDITS: INFO6205 assignment repository for reference to build custom implementation for pinyin
+ * https://github.com/rchillyard/INFO6205
+ */
 public class MSDRadixSort {
     private static String[] aux;
     private static String[] aux1;

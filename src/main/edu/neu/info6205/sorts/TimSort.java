@@ -2,6 +2,10 @@ package edu.neu.info6205.sorts;
 import edu.neu.info6205.utils.SortUtils;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
+/**
+ * Credits: geeksforgeeks for reference to build custom implementation
+ *  https://www.geeksforgeeks.org/timsort/
+ */
 public class TimSort
 {
     private static int cutoff=128;

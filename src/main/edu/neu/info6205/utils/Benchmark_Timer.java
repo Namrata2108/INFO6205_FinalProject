@@ -11,6 +11,11 @@ import java.util.function.UnaryOperator;
 
 /**
  * This class implements a simple   Benchmark utility for measuring the running time of algorithms.
+ *
+ *
+ * CREDITS FOR CODE: INFO6205 ASSIGNMENT REPOSITORY
+ * https://github.com/rchillyard/INFO6205
+ *
  * In general, the benchmark class handles three phases of a "run:"
  * <ol>
  *     <li>The pre-function which prepares the input to the study function (field fPre) (may be null);</li>

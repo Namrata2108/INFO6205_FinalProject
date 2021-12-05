@@ -1,21 +1,56 @@
 package edu.neu.info6205;
 
+import edu.neu.info6205.sorts.DualPivotQuickSort;
 import edu.neu.info6205.sorts.LSDRadixSort;
 import edu.neu.info6205.sorts.MSDRadixSort;
+import edu.neu.info6205.sorts.TimSort;
+import edu.neu.info6205.utils.BenchmarkTarget;
 import edu.neu.info6205.utils.SortUtils;
-import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+
+import java.util.Arrays;
+import java.util.function.Supplier;
 
 public class Driver {
-    public static void main(String[] args) throws BadHanyuPinyinOutputFormatCombination {
-        /**
-         * TODO: Polish this up after other sorts are implemented
-         */
-        String[] chinese = SortUtils.chineseExample;
-        String[] chineseConv = SortUtils.convertToPinyin(chinese);
-        MSDRadixSort.sort(chineseConv, chinese);
-        int n = chinese.length;
-        for (int i = 0; i < n; i++) {
-            System.out.println(chinese[i]);
+    public static void main(String[] args) {
+        {
+            // Dual Pivot quick sort
+            System.out.println("Dual Pivot Quick Sort Benchmark\n");
+            for (int i = 0; i < SortUtils.filesSourceArray.length; i++) {
+                String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
+                long n = chinese.length;
+                Supplier supplier = () -> Arrays.copyOf(chinese, chinese.length);
+                BenchmarkTarget.benchmarkTarget(supplier, DualPivotQuickSort::doSort, 1, n, "Dual Pivot Quick Sort");
+            }
+        }
+        {
+            // MSD Radix Sort
+            System.out.println("\nMSD Radix Sort Benchmark\n");
+            for(int i=0; i< SortUtils.filesSourceArray.length; i++){
+                String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
+                long n = chinese.length;
+                Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
+                BenchmarkTarget.benchmarkTarget(supplier, MSDRadixSort::doSort, 1, n, "MSD Radix Sort");
+             }
+        }
+        {
+            // LSD Radix Sort
+            System.out.println("\nLSD Radix Sort Benchmark\n");
+            for(int i=0; i< SortUtils.filesSourceArray.length; i++){
+                String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
+                long n = chinese.length;
+                Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
+                BenchmarkTarget.benchmarkTarget(supplier, LSDRadixSort::doSort, 1, n, "LSD Radix Sort");
+            }
+        }
+        {
+            // Tim Sort
+            System.out.println("\nTim Sort Benchmark\n");
+            for(int i=0; i< SortUtils.filesSourceArray.length; i++){
+                String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
+                long n = chinese.length;
+                Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
+                BenchmarkTarget.benchmarkTarget(supplier, TimSort::doSort, 1, n, "Tim Sort");
+            }
         }
     }
 }

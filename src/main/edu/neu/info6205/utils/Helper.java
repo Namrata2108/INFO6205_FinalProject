@@ -1,6 +1,9 @@
 package edu.neu.info6205.utils;
 
 import static java.util.Arrays.binarySearch;
+/**
+ * Credits: info6205 assignments repo
+ */
 
 /**
  * Helper interface.

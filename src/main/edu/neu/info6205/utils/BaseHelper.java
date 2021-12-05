@@ -3,6 +3,9 @@ package edu.neu.info6205.utils;
 import java.util.Random;
 import java.util.function.Function;
 
+/**
+ * Credits: info6205 assignments repo
+ */
 public class BaseHelper<X extends Comparable<X>> implements Helper<X> {
 
     /**
