@@ -46,7 +46,7 @@ public class Driver {
                 String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
                 long n = chinese.length;
                 Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
-                BenchmarkTarget.benchmarkTarget(supplier, TimSort::doSort, 1, n, "Husky sort");
+                BenchmarkTarget.benchmarkTarget(supplier, TimSort::doSort, 1, n, "Tim sort");
             }
         }
         {
@@ -56,7 +56,7 @@ public class Driver {
                 String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
                 long n = chinese.length;
                 Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
-                BenchmarkTarget.benchmarkTarget(supplier, PureHuskySort::doSort, 1, n, "Tim Sort");
+                BenchmarkTarget.benchmarkTarget(supplier, PureHuskySort::doSort, 1, n, "Husky Sort");
             }
         }
         {
