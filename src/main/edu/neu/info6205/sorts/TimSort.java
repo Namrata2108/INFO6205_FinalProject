@@ -58,6 +58,7 @@ public class TimSort
         for(int i=l+1;i<=r;i++)
         {
             String temp=a[i];
+            String temp1 = chinese[i];
             int j=i-1;
             while(j>=l && SortUtils.greaterThan(a[j], temp))
             {
@@ -66,6 +67,7 @@ public class TimSort
                 j--;
             }
             a[j+1]=temp;
+            chinese[j+1]=temp1;
         }
     }
     private static void mergeSort(String[] a, String[] chinese, int l, int m,int r)
@@ -73,13 +75,17 @@ public class TimSort
         int l1=m-l+1, l2=r-m;
         String[] left= new String[l1];
         String[] right= new String[l2];
+        String[] left1= new String[l1];
+        String[] right1= new String[l2];
         for(int t=0;t<l1;t++)
         {
             left[t]=a[l+t];
+            left1[t] = chinese[l+t];
         }
         for(int t=0;t<l2;t++)
         {
             right[t]=a[m+1+t];
+            right1[t] = chinese[m+1+t];
         }
         int i=0,j=0,k=l;
         while(i<l1 && j<l2)
@@ -87,10 +93,12 @@ public class TimSort
             if(SortUtils.greaterThan(right[j], left[i]))
             {
                 a[k]=left[i];
+                chinese[k] = left1[i];
                 i++;
             }
             else
             {
+                chinese[k] = right1[j];
                 a[k]=right[j];
                 j++;
             }
@@ -98,12 +106,14 @@ public class TimSort
         }
         while(i<l1)
         {
+            chinese[k] = left1[i];
             a[k]=left[i];
             k++;
             i++;
         }
         while(j<l2)
         {
+            chinese[k] = right1[j];
             a[k]=right[j];
             k++;
             j++;

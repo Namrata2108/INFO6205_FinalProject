@@ -14,10 +14,17 @@ import static org.junit.Assert.*;
 public class DualPivotQuickSortTest {
     @Test
     public void testSort(){
-        String[] chinese = Arrays.copyOf(SortUtils.chineseExample,SortUtils.chineseExample.length);
-        DualPivotQuickSort.doSort(chinese);
-        for (int i = 0; i < chinese.length; i++) {
-            assertEquals(chinese[i], SortUtils.chineseExampleSorted[i]);
+        try{
+            String[] chinese = Arrays.copyOf(SortUtils.chineseExample,SortUtils.chineseExample.length);
+            String[] chineseExampleSortedTranslation = SortUtils.convertToPinyin(SortUtils.chineseExampleSorted);
+            DualPivotQuickSort.doSort(chinese);
+            String[] chineseTranslated = SortUtils.convertToPinyin(chinese);
+            for (int i = 0; i < chinese.length; i++) {
+                assertEquals(chineseTranslated[i], chineseExampleSortedTranslation[i]);
+            }
+        }
+        catch (BadHanyuPinyinOutputFormatCombination e){
+            e.printStackTrace();
         }
     }
 
@@ -47,11 +54,18 @@ public class DualPivotQuickSortTest {
 
     @Test
     public void readFileSortTest() {
-        String[] chinese = SortUtils.readFromFile("src/resources/chineseExample.txt");
-        assertEquals(chinese.length,SortUtils.chineseExample.length);
-        DualPivotQuickSort.doSort(chinese);
-        for (int i = 0; i < chinese.length; i++) {
-            assertEquals(chinese[i], SortUtils.chineseExampleSorted[i]);
+        try{
+            String[] chinese = SortUtils.readFromFile("src/resources/chineseExample.txt");
+            String[] chineseExampleSortedTranslation = SortUtils.convertToPinyin(SortUtils.chineseExampleSorted);
+            assertEquals(chinese.length,SortUtils.chineseExample.length);
+            DualPivotQuickSort.doSort(chinese);
+            String[] chineseTranslated = SortUtils.convertToPinyin(chinese);
+            for (int i = 0; i < chinese.length; i++) {
+                assertEquals(chineseTranslated[i], chineseExampleSortedTranslation[i]);
+            }
+        }catch (BadHanyuPinyinOutputFormatCombination e){
+            e.printStackTrace();
         }
+
     }
 }
