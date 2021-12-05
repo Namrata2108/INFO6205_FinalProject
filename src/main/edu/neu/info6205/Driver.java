@@ -46,7 +46,7 @@ public class Driver {
                 String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
                 long n = chinese.length;
                 Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
-                BenchmarkTarget.benchmarkTarget(supplier, TimSort::doSort, 1, n, "Tim Sort");
+                BenchmarkTarget.benchmarkTarget(supplier, TimSort::doSort, 1, n, "Husky sort");
             }
         }
         {
@@ -57,6 +57,16 @@ public class Driver {
                 long n = chinese.length;
                 Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
                 BenchmarkTarget.benchmarkTarget(supplier, PureHuskySort::doSort, 1, n, "Tim Sort");
+            }
+        }
+        {
+            // Enhanced MSD Radix Sort (MSDRadixSort with cutoff to insertion sort)
+            System.out.println("\nMSDRadixSort with cutoff to insertion sort Benchmark\n");
+            for(int i=0; i< SortUtils.filesSourceArray.length; i++){
+                String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
+                long n = chinese.length;
+                Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
+                BenchmarkTarget.benchmarkTarget(supplier, MSDRadixSortWithCutoff::doSort, 1, n, "Enhanced MSD Radix Sort");
             }
         }
     }

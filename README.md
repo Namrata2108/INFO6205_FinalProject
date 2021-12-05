@@ -1,12 +1,12 @@
 # INFO6205_FinalProject
 
 ## Group Members:
-###1. Varun Venkatesh Gowda (002126161)
-###2. Namrata Ruchandani (002125637)
-###3. Venkteshprasad Maya Rao (001087357)
+## 1. Varun Venkatesh Gowda (002126161)
+## 2. Namrata Ruchandani (002125637)
+## 3. Venkteshprasad Maya Rao (001087357)
 
 ##
-##The project structure is split up into main(Sources root), resources(Resources root) and test(Test root) with Driver.java as the main class.
+## The project structure is split up into main(Sources root), resources(Resources root) and test(Test root) with Driver.java as the main class.
 
 ### The "sorts" package consists of:
 1) DualPivotQuickSort.java which uses pinyin4j for preprocessing and performs dual pivot quick sort on the chinese array.
