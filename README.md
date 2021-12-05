@@ -6,13 +6,15 @@
 ## 3. Venkteshprasad Maya Rao (001087357)
 
 ##
-## The project structure is split up into main(Sources root), resources(Resources root) and test(Test root) with Driver.java as the main class.
+## The project structure is split up into main(Sources root), resources(Resources root), test(Test root) and "report and paper" with Driver.java as the main class.
 
 ### The "sorts" package consists of:
 1) DualPivotQuickSort.java which uses pinyin4j for preprocessing and performs dual pivot quick sort on the chinese array.
 2) MSDRadixSort.java which makes of pinyin4j library to convert chinese text to pinyin and then sorts the pinyin array whilst also sorting the original chinese text array
 3) TimSort.java which sorts the chinese array post conversion to pinyin
 4) LSRadixSort.java which sorts the pinyin array post conversion
+5) MSDRadixSortWithCutoff.java which is an enhancement to MSDRadixSort with a cutoff to Insertion sort
+6) PureHuskySort.java which sorts pinyin array in Dual Pivot QuickSort format but uses hashed long versions to compare and sort
 
 ### The "utils" package consists of:
 1) Benchmark utilities (Benchmark, Benchmark_Timer, BenchmarkTarget, Timer) to be able to measure the running times of the sort algorithms (Credits: Info6205 assignments repo)
@@ -28,6 +30,10 @@
 ### The "test" directory consists of:
 1) Tests for all the sort mechanisms (with the inclusion of partition test for DualPivotQuickSort)
 2) Tests for the benchmark utility (Credits: info6205 assignments repo)
+
+### The "report and paper" directory consists of:
+1) Final_project_Report.pdf which contains the report of our findings in this project
+2) PSA_Final_Paper_LiteratureSurvey.pdf which contains the literature survey of the 3 papers read by the team along with the work we have done in relation to the papers
 
 ### Additional libraries used to complete the project:
 1) pinyin4j
