@@ -1,9 +1,6 @@
 package edu.neu.info6205;
 
-import edu.neu.info6205.sorts.DualPivotQuickSort;
-import edu.neu.info6205.sorts.LSDRadixSort;
-import edu.neu.info6205.sorts.MSDRadixSort;
-import edu.neu.info6205.sorts.TimSort;
+import edu.neu.info6205.sorts.*;
 import edu.neu.info6205.utils.BenchmarkTarget;
 import edu.neu.info6205.utils.SortUtils;
 
@@ -50,6 +47,16 @@ public class Driver {
                 long n = chinese.length;
                 Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
                 BenchmarkTarget.benchmarkTarget(supplier, TimSort::doSort, 1, n, "Tim Sort");
+            }
+        }
+        {
+            // Husky Sort
+            System.out.println("\nHusky Sort Benchmark\n");
+            for(int i=0; i< SortUtils.filesSourceArray.length; i++){
+                String[] chinese = SortUtils.readFromFile(SortUtils.filesSourceArray[i]);
+                long n = chinese.length;
+                Supplier supplier = ()-> Arrays.copyOf(chinese, chinese.length);
+                BenchmarkTarget.benchmarkTarget(supplier, PureHuskySort::doSort, 1, n, "Tim Sort");
             }
         }
     }
