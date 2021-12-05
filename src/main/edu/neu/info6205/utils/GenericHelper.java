@@ -3,6 +3,10 @@ package edu.neu.info6205.utils;
 import java.util.Random;
 import java.util.function.Function;
 
+/**
+ * Credits: info6205 assignments repo
+ */
+
 public interface GenericHelper<X> {
     /**
      * @return true if this is an instrumented Helper.

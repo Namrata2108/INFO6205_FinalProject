@@ -5,6 +5,11 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
+/**
+ * Credits: info6205 assignments repo
+ * https://github.com/rchillyard/INFO6205
+ */
+
 public class Timer {
 
     /**

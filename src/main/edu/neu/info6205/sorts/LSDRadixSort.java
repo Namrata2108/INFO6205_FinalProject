@@ -3,8 +3,12 @@ package edu.neu.info6205.sorts;
 import edu.neu.info6205.utils.SortUtils;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
+/**
+ * Credits: Stackoverflow community
+ * https://stackoverflow.com/questions/37619532/how-to-use-lsd-string-sort-without-having-to-enter-a-fixed-length/45905320
+ */
 public class LSDRadixSort {
-        private static int R=256;
+        private static int R=65536;
         private static String[] aux;
         private static String[] aux1;
 

@@ -5,7 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ * Credits: info6205 assignments repo
+ * https://github.com/rchillyard/INFO6205
+ */
 public class TimerTest {
 
     @Before
