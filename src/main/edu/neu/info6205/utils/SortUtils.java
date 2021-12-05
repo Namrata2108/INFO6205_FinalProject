@@ -7,8 +7,7 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.text.CollationKey;
 import java.text.Collator;
@@ -174,4 +173,22 @@ public class SortUtils {
             "src/resources/shuffledChinese_2M.txt",
             "src/resources/shuffledChinese_4M.txt"
     };
+    public static void writeToFile(String[] arr) {
+        File fout = new File("src/resources/sortedArraySample.txt");
+        int n = 0;
+        if(arr.length<=1500){
+            n = arr.length;
+        }
+        else{
+            n=1500;
+        }
+        try (FileOutputStream fos = new FileOutputStream(fout); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));) {
+            for (int i = 0; i <n; i++) {
+                bw.write(arr[i]);
+                bw.newLine();
+            }
+        } catch (IOException ignored) {
+            ignored.printStackTrace();
+        }
+    }
 }
