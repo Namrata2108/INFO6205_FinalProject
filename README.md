@@ -25,7 +25,7 @@
 1) The chinese text files containing data sets for sort (Courtesy of Prof. Robin Hillyard) and reproduced for the benchmark sizes of 250k, 500k, 1M, 2M and 4M
 2) log4j.properties file for the configuration of the logger
 3) chineseExample.txt for unit tests
-4) sortedArraySample.txt which consists of a part of shuffledChinese.txt (1500 words) in sorted order which has been sorted using our implementation of MSD Radix Sort
+4) sortedArraySamples which consists of a part of shuffledChinese.txt (1500 words) in sorted order which has been sorted using our implementation of the MSDRadix, LSDRadix, DPQuick, Tim, PureHusky and MSDRadix with cutoff sort algorithms (respective suffixes added)
 
 ### The "test" directory consists of:
 1) Tests for all the sort mechanisms (with the inclusion of partition test for DualPivotQuickSort)
